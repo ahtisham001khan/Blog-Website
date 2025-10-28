@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, Form, Button, Image, Card } from "react-bootstrap";
-import { Heading } from "../Components/heading";
+import { Heading } from "../Components/Heading";
 
 const Contact = () => {
   const handleSubmit = (e) => {
@@ -112,3 +112,4 @@ const Contact = () => {
 };
 
 export default Contact;
+
