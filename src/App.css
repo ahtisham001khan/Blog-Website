@@ -1,0 +1,713 @@
+/* ----------------- Global_Fonts_Start ------------------ */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+/* ----------------- Global_Fonts_End ------------------ */
+
+
+/* ----------------- Root_Variables ------------------ */
+:root {
+  --Background: #ffffff;
+  --Head-color: #333333;
+  --Text_color: #555555;
+  --Text_color_hover: #ff8800;
+}
+/* ----------------- Root_Variables_End ------------------ */
+
+
+/* ----------------- Global_Properties_Start ------------------ */
+* {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  text-decoration: none !important;
+  background: none;
+  outline: none;
+  border: none;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  overflow-x: hidden !important;
+}
+
+html {
+  scrollbar-width: none;
+}
+html::-webkit-scrollbar {
+  display: none;
+}
+.heading{
+  background-color: var(--Text_color_hover);
+  font-size: 1.4em;
+}
+/* ----------------- Global_Properties_End ------------------ */
+
+
+/* ----------------- Navbar_Component_Start ------------------ */
+.toggle_btn {
+  box-shadow: none !important;
+  border: 0 !important;
+  color: var(--Text_color_hover) !important;
+  font-size: 1.5em !important;
+}
+
+.toggle_btn span {
+  background: linear-gradient(90deg, var(--Text_color_hover), #ff9f1c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.Site_Logo span span,
+.Site_Logo span svg,
+.hero-section h4,
+h1 {
+  color: var(--Head-color) !important;
+}
+
+.navi .navbar-nav .nav-link a,
+.G_Catagory a {
+  color: var(--Text_color) !important;
+  font-family:Arial;
+  font-size: 1.1em;
+  font-weight: 600;
+  font-style: italic;
+  letter-spacing: 1px;
+}
+
+.navbar-brand span,
+.navbar-brand svg,
+.Navi-menu {
+  color: var(--Text_color) !important;
+}
+
+.navi .navbar-nav .nav-link:hover a,
+.Navi-menu a:hover,
+.highlight,
+.Site_Logo span span span,
+.hover-group:hover,
+.G_Catagory li:hover a {
+  color: var(--Text_color_hover) !important;
+}
+
+.Social-links .nav-link {
+  display: inline-block;
+  width: 40px;
+  height: 38px;
+  line-height: 35px;
+  border-radius: 50px;
+  text-align: center;
+  font-size: 1.2em !important;
+}
+
+.Social-links .nav-link:hover {
+  background: var(--Text_color_hover);
+}
+
+.Social-links .nav-link i {
+  color: var(--Head-color);
+  transition: transform 300ms, color 300ms;
+}
+
+.Social-links .nav-link:hover i {
+  color: var(--Background);
+  transform: scale(0.85);
+}
+
+.hover-group:hover .arrow {
+  transform: translateX(6px);
+}
+.btn-close:focus{
+box-shadow: none !important;
+}
+/* ----------------- Navbar_Component_End ------------------ */
+
+
+/* ----------------- Hero_Section_Start ------------------ */
+.H-slider {
+  height: 500px;
+}
+
+@media (max-width: 1024px) {
+  .H-slider {
+    height: 450px;
+  }
+}
+
+@media (max-width: 768px) {
+  .H-slider {
+    height: 350px;
+  }
+}
+
+@media (max-width: 480px) {
+  .H-slider {
+    height: 250px;
+  }
+}
+
+.vertical-slider {
+  position: relative;
+  overflow: hidden;
+  max-height: 420px;
+  width: 100%;
+}
+
+.vertical-slide-track {
+  display: flex;
+  flex-direction: column;
+  will-change: transform;
+  animation: scrollVertical 12s linear infinite;
+  width: max-content;
+  flex-wrap: nowrap;
+}
+
+@keyframes scrollVertical {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+.vertical-slider:hover .vertical-slide-track {
+  animation-play-state: paused;
+}
+
+.vertical-slide img {
+  width: 100px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.vertical-slide h6 { font-size: clamp(0.85rem, 1vw, 1rem); }
+.vertical-slide p  { font-size: clamp(0.8rem, 0.9vw, 0.85rem); width: 90%;}
+
+@media (min-width: 1000px) {
+  .V_S {
+    max-height: 550px;
+  }
+  .vertical-slide {
+    width: 100%;
+    flex: 0 0 auto;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+  }
+}
+
+/* ===== Mobile / Tablet: horizontal marquee ===== */
+@media (max-width: 990px) {
+  .vertical-slider {
+    max-height: unset;
+    height: auto;
+    padding-bottom: 0.5rem;
+  }
+
+  .vertical-slide-track {
+    flex-direction: row;
+    animation: scrollHorizontal 20s linear infinite;
+    width: max-content;
+    flex-wrap: nowrap;
+    gap: 1rem;
+  }
+
+  .vertical-slide {
+    flex: 0 0 350px;
+    width: 350px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .vertical-slide img {
+    width: 80px;
+    height: 100px;
+  }
+
+  @keyframes scrollHorizontal {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .vertical-slider:hover .vertical-slide-track {
+    animation-play-state: paused;
+  }
+}
+/* ----------------- Hero_Section_End ------------------ */
+
+
+/* ----------------- Slider_Fix_Start ------------------ */
+.slick-slider {
+  overflow: hidden !important;
+  width: 100% !important;
+}
+
+.slick-list {
+  overflow: hidden !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.slick-track {
+  display: flex !important;
+  align-items: stretch !important;
+  margin: 0 auto !important;
+}
+
+.slick-slide {
+  padding: 0 10px !important;
+  box-sizing: border-box !important;
+}
+
+.Card {
+  height: 350px !important;
+  margin: 15px 0 !important;
+  overflow: hidden !important;
+  border-radius: 14px;
+  transition: transform 0.3s ease;
+  background: #fff;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.08);
+}
+
+.Card:hover {
+  transform: translateY(-5px);
+}
+
+@media (max-width: 1024px) {
+  .slick-slide {
+    padding: 0 8px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .slick-slide {
+    padding: 0 6px !important;
+  }
+  .slick-list {
+    overflow-x: hidden !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .Card {
+    height: 320px !important;
+  }
+}
+
+/* ----------------- Slider_Fix_End ------------------ */
+
+
+/* ----------------- Subscribe_Section_Start ------------------ */
+.subscribe-section {
+  border-top: 2px solid #e6e3e3;
+  border-bottom: 2px solid #e6e3e3;
+}
+
+.custom-submit {
+  background-color: var(--Text_color_hover) !important;
+}
+/* ----------------- Subscribe_Section_End ------------------ */
+
+
+/* ----------------- Footer_Section_Start ------------------ */
+.Foot-H {
+  color: var(--Text_color_hover);
+}
+
+.footer-section ul {
+  padding-left: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.footer-section ul li:hover {
+  text-decoration: underline;
+  color: var(--Text_color_hover);
+}
+
+.footer-section .form-control {
+  flex: 1;
+  border: 2px solid var(--Text_color_hover) !important;
+}
+
+.footer-section .fs-5 svg {
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.footer-section .fs-5 svg:hover {
+  color: var(--Head-color) !important;
+}
+/* ----------------- Footer_Section_End ------------------ */
+
+
+/* ----------------- Blogs_Page_Start ------------------ */
+.hero-sec {
+  position: relative;
+  text-align: center;
+  padding: 100px 20px;
+  background: url("images/Slide(3).jpg") no-repeat center;
+  background-size: cover;
+  color: white;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.hero-sec::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  z-index: -1;
+}
+
+.hero-title {
+  position: relative;
+  z-index: 2;
+  color: white;
+  font-size: clamp(1.5rem, 4vw + 0.5rem, 4rem);
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.search-bar,
+.category-select {
+  padding: 15px 20px !important;
+  border-radius: 30px !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) !important;
+  border: 3px solid var(--Text_color_hover) !important;
+}
+
+.blog-card {
+  height: 100%;
+  min-height: 400px;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card-img {
+  height: 200px;
+  object-fit: cover;
+  transition: 0.3s ease;
+}
+
+.blog-card-title {
+  font-size: 1.3rem;
+  font-weight: 500;
+  color: var(--Head-color);
+}
+
+.blog-card-subtitle {
+  font-size: 0.9rem;
+  color: var(--Text_color);
+}
+
+.blog-card-text {
+  font-size: 1rem;
+  color: var(--Text_color);
+}
+
+.read-more-button {
+  background-color: var(--Text_color_hover) !important;
+  color: var(--Background) !important;
+  font-size: 1rem;
+  padding: 8px 15px;
+  border-radius: 25px;
+  transition: background-color 0.3s ease;
+}
+
+.read-more-button:hover {
+  background-color: #e87000 !important;
+}
+/* ----------------- Blogs_Page_End ------------------ */
+
+
+/* ----------------- About_Page_Start ------------------ */
+.Sec_intro {
+  padding: 100px 0;
+  animation: fadeIn 1.5s ease-out;
+}
+
+.Sec_intro label {
+  font-weight: 700;
+  color: var(--Text_color);
+  font-size: 1.2em;
+}
+
+.Sec_intro input::placeholder,
+textarea::placeholder {
+  color: var(--Text_color);
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.Sec_intro input,
+textarea {
+  border: 2px solid var(--Text_color) !important;
+  box-shadow: none !important;
+}
+/* ----------------- About_Page_End ------------------ */
+
+
+/* ----------------- Hover_Animations_Start ------------------ */
+.hero-card:hover .fa-arrow-right,
+.hover-card:hover .fa-arrow-right {
+  transform: rotate(-45deg);
+}
+
+.hero-card:hover,
+.hover-card:hover {
+  transform: scale(1.02);
+  transition: transform 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: translateY(-5px);
+}
+/* ----------------- Hover_Animations_End ------------------ */
+
+
+/* ----------------- Search_Bar_Start ------------------ */
+.search-bar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  width: 25%;
+  margin: 0 auto;
+}
+
+.search-bar-container input {
+  width: 100%;
+  border-radius: 25px;
+  padding-left: 20px;
+  border: 1px solid #ddd;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.search-bar-container input:hover,
+.search-bar-container input:focus {
+  border-color: var(--Text_color_hover);
+}
+
+.close-search-btn {
+  display: inline-block !important;
+  height:100% !important;
+  position: absolute;
+ top: 0% !important;
+  right: 10px;
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #333 !important;
+  cursor: pointer;
+  padding:0 !important;
+}
+
+.close-search-btn:hover {
+  color: var(--Text_color_hover);
+}
+/* ----------------- Search_Bar_End ------------------ */
+
+
+/* ----------------- Social_Links_Start ------------------ */
+.Social-links {
+  display: flex;
+  justify-content: space-around;
+  width: 25%;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 990px) {
+  .Social-links {
+    width: 100% !important;
+  }
+}
+
+.Social-links i {
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.Social-links i:hover {
+  color: var(--Text_color_hover);
+}
+/* ----------------- Social_Links_End ------------------ */
+
+
+/* ----------------- Testimonials_Start ------------------ */
+.Testimonials .carousel-inner,
+.Testimonials .carousel-item {
+  height: 300px !important;
+  padding: 20px 0;
+}
+/* ----------------- Testimonials_End ------------------ */
+/* ---------------- Hero Blog ---------------- */
+/* ---------------- Hover Card (Hero Blog) ---------------- */
+.hover-card {
+  overflow: hidden;
+  display: block;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.hover-card:hover {
+  transform: scale(1.02);
+}
+
+.hover-card img {
+  object-fit: cover;
+  width: 100%;
+  height: clamp(400px, 50vh, 550px);
+}
+
+/* Overlay styling */
+.hover-card .bg-gradient-dark {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+  text-align: center;
+}
+
+.hover-card h4 {
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  font-weight: 700;
+}
+
+.hover-card i {
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* ---------------- Review Cards ---------------- */
+.review-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  padding: 1.5rem;
+  height: 100%;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.review-card img {
+  width: 55px;
+  height: 55px;
+  object-fit: cover;
+}
+
+.review-card h6 {
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  font-weight: 600;
+}
+
+.review-card p {
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  color: #555;
+}
+
+/* ---------------- Hero Overlay ---------------- */
+.hero-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: clamp(0.8rem, 2vw, 1.5rem);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.85), transparent);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
+
+.hero-overlay h4 {
+  font-size: clamp(1rem, 2vw, 1.6rem);
+  margin-bottom: 0;
+  flex: 1;
+  line-height: 1.2;
+}
+
+.hero-overlay i {
+  font-size: clamp(0.9rem, 2vw, 1.3rem);
+  color: white;
+  border-radius: 50%;
+  padding: clamp(3px, 0.6vw, 6px);
+  border: 2px solid #fff;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease, background 0.3s ease;
+}
+
+/* Hover effect for arrow */
+.hero-overlay i:hover {
+  transform: translateX(5px);
+  background: white;
+  color: black;
+}
+
+/* ---------------- Responsive Tweaks ---------------- */
+@media (max-width: 992px) {
+  .hover-card img {
+    height: clamp(250px, 45vh, 450px);
+  }
+}
+
+@media (max-width: 768px) {
+  .hover-card img {
+    height: 300px;
+  }
+
+  .hover-card h4 {
+    font-size: 1.1rem;
+  }
+
+  .review-card {
+    padding: 1.2rem;
+  }
+
+  .hero-overlay {
+    padding: 0.8rem 1rem;
+  }
+
+  .hero-overlay h4 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hover-card img {
+    height: 250px;
+  }
+
+  .review-card {
+    text-align: center;
+  }
+
+  .review-card img {
+    margin-bottom: 10px;
+  }
+
+  .hero-overlay {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    gap: 0.5rem;
+  }
+
+  .hero-overlay i {
+    align-self: flex-end;
+    font-size: 1rem;
+    padding: 3px;
+  }
+}
