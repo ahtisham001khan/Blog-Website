@@ -1,7 +1,7 @@
 import { Col, Container, Row } from "react-bootstrap";
 import { Catagory_Sidebar } from "./Catagory_Sidebar";
 import Header from "./Header";
-import { Heading } from './heading'
+import { Heading } from './Heading'
 import { Posts } from "./Posts";
 import { Subscription } from "./Subscription";
 import { Card_Slider } from "./Card_Slider";
@@ -114,6 +114,7 @@ export default Home;
   </script>
 </body>
 </html>
+
 
 
 */ 
